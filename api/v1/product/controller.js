@@ -278,7 +278,7 @@ exports.findProductByCategory = async (req, res) => {
         return res.status(200).json(
             baseResponse(
                 200,
-                data == null ? constantResp.notFoundResult : constantResp.notFoundRfoundResultesult, 
+                data == null ? constantResp.notFoundResult : constantResp.foundResult, 
                 data
             )
         );
