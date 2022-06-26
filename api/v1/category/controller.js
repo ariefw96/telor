@@ -52,3 +52,4 @@ exports.listCategories = async (req, res) => {
         );
     }
 }
+

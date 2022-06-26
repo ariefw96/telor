@@ -6,6 +6,7 @@ const middelware = require('./../../../middleware/jwt-auth');
 router.post('/add', controller.add_product );
 router.get('/all', controller.all_product);
 router.get('/get', controller.get_single_product);
+router.get('/getByCategory', controller.findProductByCategory);
 router.patch('/update',  controller.update_product);
 router.delete('/delete',  controller.delete_product);
 

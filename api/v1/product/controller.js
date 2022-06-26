@@ -267,3 +267,28 @@ exports.delete_product = async function (req, res) {
     }
 }
 
+exports.findProductByCategory = async (req, res) => {
+    let id = req.query.category_id
+    try{
+        const data = await productModel.findAll({
+            where : {
+                category_id : id
+            }
+        });
+        return res.status(200).json(
+            baseResponse(
+                200,
+                data == null ? constantResp.notFoundResult : constantResp.notFoundRfoundResultesult, 
+                data
+            )
+        );
+    }catch(e){
+        return res.status(500).json(
+            errorResponse(
+                500,
+                constantResp.internalServerError,
+                e.toString()
+            )
+        );
+    }
+}
